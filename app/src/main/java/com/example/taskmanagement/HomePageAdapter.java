@@ -26,4 +26,5 @@ public class HomePageAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return arrayList.size();
     }
+
 }
