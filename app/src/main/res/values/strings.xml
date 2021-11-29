@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Task Management</string>
+    <string name="title_create">Create</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
