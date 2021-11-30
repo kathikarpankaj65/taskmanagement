@@ -4,10 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1574074074074074" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14629629629629629" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14629629629629629" />
+        <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.14629629629629629" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1574074074074074" />
         <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/adapter_create_list.xml" value="0.1503623188405797" />
+        <entry key="app/src/main/res/layout/adapter_notifications.xml" value="0.13179347826086957" />
         <entry key="app/src/main/res/layout/fragment_create.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/homepageactivity.xml" value="0.1503623188405797" />

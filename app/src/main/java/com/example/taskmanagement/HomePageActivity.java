@@ -25,7 +25,7 @@ public class HomePageActivity extends AppCompatActivity implements BottomNavigat
         viewPager=findViewById(R.id.view_pager);
         ArrayList<Fragment> arrayList=new ArrayList<>();
         arrayList.add(new CreateFragment());
-        arrayList.add(new NotificationsFragment());
+        arrayList.add(new NotificationFragment());
         viewPager.setAdapter(new HomePageAdapter(getSupportFragmentManager(), arrayList));
         BottomNavigationView bottomNavigationView=findViewById(R.id.navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
