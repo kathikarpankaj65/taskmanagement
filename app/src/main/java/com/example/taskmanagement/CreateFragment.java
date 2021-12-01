@@ -1,9 +1,11 @@
 package com.example.taskmanagement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,7 +14,9 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class CreateFragment extends Fragment {
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+public class CreateFragment extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -27,5 +31,13 @@ public class CreateFragment extends Fragment {
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.HORIZONTAL));
         recyclerView.setAdapter(new CreateListAdapter(getActivity(), createFragmentViewModel.getCreateList()));
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        FloatingActionButton floatingActionButton =view.findViewById(R.id.floating_action_button_fragment_create);
+        floatingActionButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent=new Intent(getActivity(), CreateActivity.class);
+        startActivity(intent);
     }
 }

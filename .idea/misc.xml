@@ -8,6 +8,9 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.14629629629629629" />
         <entry key="app/src/main/res/drawable/ic_notifications.xml" value="0.14629629629629629" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1574074074074074" />
+        <entry key="app/src/main/res/drawable/rounded_corner_create_button_activity.xml" value="0.1425925925925926" />
+        <entry key="app/src/main/res/drawable/tab_color.xml" value="0.1425925925925926" />
+        <entry key="app/src/main/res/layout/activiry_create.xml" value="0.11955420466058764" />
         <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/adapter_create_list.xml" value="0.1503623188405797" />

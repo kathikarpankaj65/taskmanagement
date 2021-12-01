@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomePageActivity"/>
+        <activity android:name=".CreateActivity"
+            android:theme="@style/Theme.TaskManagement.CreateActivity"/>
     </application>
 
 </manifest>
