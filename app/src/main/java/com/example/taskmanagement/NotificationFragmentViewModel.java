@@ -1,20 +1,49 @@
 package com.example.taskmanagement;
 
+import android.os.Handler;
+import android.os.Looper;
+
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
 public class NotificationFragmentViewModel extends ViewModel {
-    ArrayList<AdapterNotificationHomePage> getNotification(){
-        ArrayList<AdapterNotificationHomePage> arrayList=new ArrayList<>();
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc, "Chocolate is a food product made from roasted"));
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc1, "Get Sneakers for Men from top brands like Nike"));
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc2, "A flower, sometimes known as a bloom or blossom"));
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc3, "Elephants are the largest land mammals on earth "));
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc4, "A frog is any member of a diverse and largely"));
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc5, "a young boy or girl who is not yet an adult"));
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc6, "Dinosaurs are a diverse group of reptiles of the clade Dinosaur"));
-        arrayList.add(new AdapterNotificationHomePage(R.drawable.abc7, "A cookie is a baked or cooked snack"));
-        return arrayList;
+    LiveData<Result> getNotificationFragmentViewModel() {
+        MutableLiveData<Result> notificationFragmentMutableLiveData = new MutableLiveData<Result>();
+        NotificationFragmentThread notificationFragmentThread = new NotificationFragmentThread(notificationFragmentMutableLiveData);
+        notificationFragmentThread.start();
+        return notificationFragmentMutableLiveData;
+    }
+}
+
+class NotificationFragmentThread extends Thread {
+    Repository repository;
+    Success<ArrayList<AdapterNotificationHomePage>> success;
+    final MutableLiveData<Result> notificationFragmentMutableLiveData;
+    NotificationFragmentThread(MutableLiveData<Result> notificationFragmentMutableLiveData) {
+        this.notificationFragmentMutableLiveData = notificationFragmentMutableLiveData;
+    }
+
+    @Override
+    public void run() {
+        try {
+            notificationFragmentMutableLiveData.postValue(new Loading());
+            Thread.sleep(2000);
+            repository = new Local();
+            ArrayList<AdapterNotificationHomePage> arrayList = repository.getNotificationArrayList();
+            success = new Success<ArrayList<AdapterNotificationHomePage>>(arrayList);
+            notificationFragmentMutableLiveData.postValue(success);
+        }
+        catch (Exception e) {
+            try {
+                Thread.sleep(2000);
+                notificationFragmentMutableLiveData.postValue(new Error(e));
+            }
+            catch (Exception exception){
+                exception.getMessage();
+            }
+        }
     }
 }

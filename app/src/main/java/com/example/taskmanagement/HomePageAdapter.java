@@ -8,9 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 
 public class HomePageAdapter extends FragmentStatePagerAdapter {
-
     private ArrayList<Fragment> arrayList;
-
     public HomePageAdapter(@NonNull FragmentManager fm, ArrayList<Fragment> arrayList) {
         super(fm);
         this.arrayList=arrayList;
@@ -26,5 +24,4 @@ public class HomePageAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return arrayList.size();
     }
-
 }

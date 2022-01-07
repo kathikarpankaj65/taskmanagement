@@ -4,7 +4,6 @@ public class AdapterListViewHomePage {
     private int image;
     private String first_title;
     private String date_time;
-
     AdapterListViewHomePage(int image, String first_title, String date_time){
         this.image=image;
         this.first_title=first_title;
@@ -22,5 +21,4 @@ public class AdapterListViewHomePage {
     String getDate_time(){
         return date_time;
     }
-
 }

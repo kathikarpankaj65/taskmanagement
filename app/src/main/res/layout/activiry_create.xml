@@ -46,6 +46,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:digits="1234567890-"
             android:id="@+id/edittext_date"
             android:textColor="@color/black"
             android:drawableRight="@drawable/ic_baseline_calendar_today_24" />
@@ -67,6 +68,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:digits="0123456789:"
             android:id="@+id/edittext_time"
             android:textColor="@color/black"/>
 
